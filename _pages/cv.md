@@ -6,4 +6,4 @@ author_profile: true
 redirect_from:
   - /resume
 ---
-[CV](https://rheasukthanker.github.io/files/cv.pdf)
+[CV](/files/cv.pdf)
