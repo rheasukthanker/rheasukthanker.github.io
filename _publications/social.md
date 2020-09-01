@@ -7,7 +7,6 @@ venue: 'Progress in Advanced Computing and Intelligent Engineering (pp. 551-563)
 paperurl: 'https://link.springer.com/chapter/10.1007/978-981-13-1708-8_51'
 citation: 'Sukthanker, R., Poria, S., Cambria, E. and Thirunavukarasu, R., 2020. Anaphora and coreference resolution: A review. Information Fusion, 59, pp.139-162.'
 ---
-Social Trust Analysis: How Your Behavior on the Web Determines Reliability of the Information You Generate?
 
 [Download paper here](https://link.springer.com/chapter/10.1007/978-981-13-1708-8_51)
 
