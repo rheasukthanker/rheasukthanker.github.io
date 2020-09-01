@@ -1,6 +1,6 @@
 ---
 title: "Social Trust Analysis: How Your Behavior on the Web Determines Reliability of the Information You Generate?"
-permalink: '/publications/'
+permalink: '/publications/social/'
 collection: publications
 date: 2019-01-01
 venue: 'Progress in Advanced Computing and Intelligent Engineering (pp. 551-563). Springer, Singapore'
