@@ -1,6 +1,7 @@
 ---
 title: "Anaphora and coreference resolution: A review"
 collection: publications
+permalink: 'https://www.sentic.net/anaphora-and-coreference-resolution.pdf'
 date: 20-01-02
 venue: 'Information Fusion'
 paperurl: 'https://www.sentic.net/anaphora-and-coreference-resolution.pdf'
