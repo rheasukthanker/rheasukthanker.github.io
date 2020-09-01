@@ -103,7 +103,6 @@ author:
   impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm           :
   linkedin         :
-  orcid            : ""
   pinterest        :
   soundcloud       :
   stackoverflow    : # http://stackoverflow.com/users/123456/username
@@ -113,8 +112,6 @@ author:
   vine             :
   weibo            :
   xing             :
-  youtube          :
-  wikipedia        :
 
 
 # Reading Files
