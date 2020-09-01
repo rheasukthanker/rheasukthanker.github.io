@@ -1,7 +1,7 @@
 ---
 title: "Anaphora and coreference resolution: A review"
 collection: publications
-permalink: 'https://rheasukthanker.github.io/files/ar.pdf'
+permalink: 'files/ar.pdf'
 date: 20-01-02
 venue: 'Information Fusion'
 paperurl: 'https://www.sciencedirect.com/science/article/pii/S1566253519303677?casa_token=kWYdkX5Y9WcAAAAA:nZ8rwEA0TS54Lo-aRk4pGQ-WHsQCESlh5sovZ99wXhALfKYnntgRbYjrXi-Gt-O4AEJUV74cxYg'
