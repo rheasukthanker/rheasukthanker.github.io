@@ -203,6 +203,9 @@ defaults:
   - scope:
       path: ""
       type: publications
+  - scope:
+      path: ""
+      type: preprints
     values:
       layout: single
       author_profile: true
