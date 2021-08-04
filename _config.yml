@@ -201,6 +201,7 @@ defaults:
   - scope:
       path: ""
       type: publications
+  # _preprints
   - scope:
       path: ""
       type: preprints
