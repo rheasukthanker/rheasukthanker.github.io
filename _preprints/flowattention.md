@@ -1,6 +1,6 @@
 ---
 title: "Generative Flows with Invertible Attentions"
-collection: publications
+collection: preprints
 permalink: '/preprints/flowattention' 
 date: 20-01-02
 venue: 'Preprint'
