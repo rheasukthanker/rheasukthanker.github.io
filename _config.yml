@@ -85,7 +85,6 @@ author:
   bio              : "I am Rhea Sukthanker a masters student in Data Science at ETH Zurich"
   location         : "Location"
   employer         :
-  pubmed           : ""
   googlescholar    : "https://scholar.google.com/citations?user=OsamqmMAAAAJ&hl=en&oi=sra"
   email            :
   researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
@@ -108,7 +107,6 @@ author:
   stackoverflow    : # http://stackoverflow.com/users/123456/username
   steam            :
   tumblr           :
-  twitter          : "replacethistwitterhandle"
   vine             :
   weibo            :
   xing             :
