@@ -208,6 +208,10 @@ defaults:
   - scope:
       path: ""
       type: preprints
+   # _portfolio
+  - scope:
+      path: ""
+      type: portfolio
     values:
       layout: single
       author_profile: true
