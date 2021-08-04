@@ -1,6 +1,6 @@
 ---
 title: "Trilevel Neural Architecture Search for Efficient Single Image Super-Resolution"
-collection: publications
+collection: preprints
 permalink: '/preprints/trilevelnas' 
 date: 20-01-02
 venue: 'Preprint'
