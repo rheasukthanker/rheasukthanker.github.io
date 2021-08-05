@@ -1,5 +1,5 @@
 ---
-title: "<a href='https://github.com/rheasukthanker/spdnetnas'> Neural Architecture Search of SPD Manifold Networks </a>"
+title: "<a href='https://arxiv.org/pdf/2010.14535.pdf'> Neural Architecture Search of SPD Manifold Networks </a>"
 excerpt: "In this paper, we propose a new neural architecture search (NAS) problem of Symmetric Positive Definite (SPD) manifold networks, aiming to automate
 the design of SPD neural architectures. To address this problem, we first introduce a geometrically rich and diverse SPD neural architecture search space
 for an efficient SPD cell design. Further, we model our new NAS problem with a one-shot training process of a single supernet. Based on the supernet
