@@ -2,6 +2,7 @@
 layout: archive
 title: "Projects"
 permalink: /portfolio/
+supervisors: "supervisor"
 author_profile: true
 ---
 
