@@ -201,10 +201,6 @@ defaults:
   - scope:
       path: ""
       type: publications
-  # _preprints
-  - scope:
-      path: ""
-      type: preprints
    # _portfolio
   - scope:
       path: ""
