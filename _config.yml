@@ -173,10 +173,9 @@ collections:
   publications:
     output: true
     permalink: /:collection/:path/
-  portfolio:
+  blog:
     output: true
     permalink: /:collection/:path/
-
 # Defaults
 defaults:
   # _posts
