@@ -3,7 +3,7 @@ title: "Rethinking Bias Mitigation: Fairer Architectures Make for Fairer Face Re
 collection: publications
 permalink: 'https://openreview.net/pdf?id=NpuYNxmIHrc' 
 venue: 'NeurIPS 2023 (Oral)'
-date: '2023'
+date: '2023-01-01'
 paperurl: ''
 citation: ''
 ---
