@@ -1,7 +1,7 @@
 ---
 title: "Neural Architecture Search of SPD Manifold Networks"
 collection: publications
-permalink: '[/publications/spdnetnas/](https://arxiv.org/pdf/2010.14535.pdf)' 
+permalink: 'https://arxiv.org/pdf/2010.14535.pdf' 
 venue: 'IJCAI 2021'
 year: '2021'
 paperurl: ''
