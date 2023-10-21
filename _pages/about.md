@@ -14,11 +14,13 @@ I am Rhea Sukthanker and I am a PhD Student at the [Machine Learning Lab, Univer
 
 **Jan 2023** We released a new survey on [Neural Architecture Search: Insights from 1000 Papers](https://arxiv.org/abs/2301.08727)
 
+**Feb 2022** I started my PhD studies with a focus on Efficient and Multi-Objective Neural Architecture Search at [Machine Learning Lab, University of Freiburg](https://ml.informatik.uni-freiburg.de/)
+
 **Jan 2022** One paper accepted at CVPR 2022
 
 **June 2021** One paper accepted at IJCAI 2021
 
-**Feb 2022** I started my PhD studies with a focus on Efficient and Multi-Objective Neural Architecture Search at [Machine Learning Lab, University of Freiburg](https://ml.informatik.uni-freiburg.de/)
+
 
 
 
