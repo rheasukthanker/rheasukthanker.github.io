@@ -1,8 +1,7 @@
 ---
 title: 'Lessons I Have Learned So Far'
-collection: 'blog'
+collection: blog
 date: 2023-10-22
-permalink: /blog/lessons-learnt-phd/
 tags:
   - lessons
   - PhD
