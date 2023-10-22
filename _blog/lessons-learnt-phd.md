@@ -1,13 +1,12 @@
 ---
-title: 'Lessons I Have Learned So Far'
+title: 'Lessons I Have Learned So Far ...'
 collection: blog
+permalink: /blog/lessons-learnt-phd
 date: 2023-10-22
 tags:
   - lessons
   - PhD
 ---
-
-## Lessons I Have Learned So Far...
 
 This is where I document the lessons I've learned during my PhD studies. I plan to update this list periodically. Most of these things are what personally work for me.
 
