@@ -1,5 +1,6 @@
 ---
 title: 'Lessons I Have Learned So Far ...'
+layout : single
 collection: blog
 permalink: /blog/lessons-learnt-phd
 date: 2023-10-22
