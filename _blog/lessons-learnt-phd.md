@@ -8,6 +8,7 @@ tags:
   - PhD
 ---
 
+
 This is where I document the lessons I've learned during my PhD studies. I plan to update this list periodically. Most of these things are what personally work for me.
 
 ### Picking up New Projects
