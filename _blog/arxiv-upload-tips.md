@@ -1,5 +1,5 @@
 ---
-title: 'Mixtakes to avoid when uplaoding to arxiv (from overleaf)'
+title: 'Mixtakes to avoid when uploading to arxiv (from overleaf)'
 layout : single
 collection: blog
 permalink: /blog/arxiv-upload-tips
