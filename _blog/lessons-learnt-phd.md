@@ -28,6 +28,10 @@ I started out my PhD not really understanding the value of maintaining a certain
 - Have code maintenance days: Often after conference deadlines, make sure your code is still well-documented, the changes made are tested and merged, and resources like models are stored properly. This will be invaluable in the long run.
 - Have a consistent coding style and stick to it: Your research code doesn't need to be the best piece of software you have written, but there are certain things you need to ensure like: Is the code readable and well commented ? Is the naming and formatting consistent? Have you written tests to test the individual modules in your code ? etc. These seemingly simple things turn out to be invaluable in the long run.
 
+### Learning how to present your research
+
+I have typically been good at coding and implementing ideas and iterating over them quickly. I have valued experimentation and coding involved in exhaustive evaluation of an approach. One thing I realised only later on (thanks to my co-authors) is that experiments/coding though important are only a part of the story. What is perhaps even more important is how you present and motivate your own research. Writing well and selling the story of your work to the reader is a very important skill-set which I am still working on. Being obsessed with details of the paper and the smallest of the things about the paper is what makes for a quality paper which you are proud of. 
+
 ### Attend Conferences
 
 Conferences are meant to foster interactions, often with researchers who work on very different areas than yours. It is important to attend conferences to get to know the research community and to gain perspective about your own research. Attending conferences has helped me at times remove the blinders I have on about my own research topic and learn to adapt my own ideas to the new perspectives gained through interactions with the community.
