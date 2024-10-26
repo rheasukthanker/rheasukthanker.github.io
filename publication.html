@@ -1,5 +1,5 @@
 <script>
-    let pcallCounter = 24; // Updated initial counter to match the first publication's index
+    let pcallCounter = 22;
 
     function addPCBContent(name_,
                           year_,
@@ -9,15 +9,15 @@
                           bib_author_, 
                           venue_, 
                           venue_full_name_, 
-                          project_='None', 
-                          paper_='None',
-                          code_='None') {
-        const pcontainer = document.getElementById('pcontent-container'); // Ensure this ID exists in your HTML
-        const phtmlContent = `
+                          project_ = 'None', 
+                          paper_ = 'None',
+                          code_ = 'None') {
+      const pcontainer = document.getElementById('pcontent-container'); // Assuming you have a div with this ID to hold the content
+      const phtmlContent = `
         <div class="row mt-2">
           <div class="col-md-1 pb-3 text-md-right text-left"></div>
           <div class="col-md-3 col-sm-11 pb-3 text-md-right text-left">
-            <img class="img-fluid rounded paper-img" src="./materials/concept_figures/${img_}" alt="concept">
+            <img class="img-fluid rounded paper-img" src="./materials/concept_figures/${img_}" alt="concept" />
           </div>
           <div class="col-md-7 col-sm-12 text-md-left text-center">              
             <div class="col text-left text-md-left">
@@ -29,8 +29,8 @@
                 <a href="${project_}" target="_blank"><b class="badge badge-white">Project Page</b></a>
                 <a href="${paper_}" target="_blank"><b class="badge badge-white">Paper</b></a>
                 <a href="${code_}" target="_blank"><b class="badge badge-white">Code</b></a>
-                <a type="button" class="badge badge-white" href="javascript:void(0)" onclick="show('cbib${title_.replace(/\s+/g, '')}')">
-                  Bibtex</a>          
+                <a class="badge badge-white" href="javascript:void(0)" onclick="show('cbib${title_.replace(/\s+/g, '')}')">
+                  BibTeX</a>          
                 <div id="cbib${title_.replace(/\s+/g, '')}" class="popup">
                   @inproceedings{${name_},<br>
                       &nbsp;&nbsp;&nbsp;&nbsp;title={${title_}},<br>
@@ -44,51 +44,103 @@
           </div>
         </div>
         `;
-        pcallCounter++; // Increment after adding
-        pcontainer.innerHTML += phtmlContent; // Append new HTML content
+      pcallCounter--;
+      pcontainer.innerHTML += phtmlContent;
     }
-</script>    
+</script>
 
 <h3 class="secfont text-md-left">Publications</h3>
 <br>
 <h6 class="secfont text-md-left" style="font-weight: 900"><em>2024</em></h6>    
 
-<div id="pcontent-container"> <!-- Added this div to hold dynamic content -->
-  <div class="row mt-2">            
-    <section id="neurips24"></section>
-    <div class="col-md-1 pb-3 text-md-right text-left"></div>
-    <div class="col-md-3 col-sm-11 pb-3 text-md-right text-left">
-        <img class="img-fluid rounded paper-img" src="./materials/concept/hwgptbench.png" alt="concept">
+<div id="pcontent-container"> <!-- Ensure there's a div to hold the content -->
+    <div class="row mt-2">            
+        <section id="neurips24"></section>
+        <div class="col-md-1 pb-3 text-md-right text-left"></div>
+        <div class="col-md-3 col-sm-11 pb-3 text-md-right text-left">
+            <img class="img-fluid rounded paper-img" src="./materials/concept/hwgptbench.png" alt="HW-GPT-Bench concept" />
+        </div>
+        <div class="col-md-7 col-sm-12 text-md-left text-center">              
+            <div class="col text-left text-md-left">
+                <h6 class="darkgray"><b>[C24] HW-GPT-Bench: Hardware-Aware Architecture Benchmark for Language Models</b></h6>
+                <p class="ssmall authors"><u><b>Rhea Sukthanker</b></u>, Arber Zela, Benedikt Staffler, Aaron Klein, Lennart Purucker, Jörg K. H. Franke, Frank Hutter</p>
+                <h6>
+                    <span class="conf">NeurIPS DBT 2024 (To appear)</span><br>
+                    <a href="https://arxiv.org/abs/2405.10299" target="_blank"><span class="badge badge-white">Project Page</span></a>
+                    <a href="https://arxiv.org/abs/2405.10299" target="_blank"><span class="badge badge-white">Paper</span></a>      
+                    <a href="https://github.com/automl/HW-GPT-Bench/" target="_blank"><span class="badge badge-white">Code</span></a>
+                    <a class="badge badge-bibtexwhite" href="javascript:void(0)" onclick="show('bibc24')">BibTeX</a>                             
+                    <div id="bibc24" class="popup">
+                        @inproceedings{sukthanker2024hw,<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;title={HW-GPT-Bench: Hardware-Aware Architecture Benchmark for Language Models},<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;author={Sukthanker, Rhea Sanjay and Zela, Arber and Staffler, Benedikt and Klein, Aaron and Franke, Jörg KH and Purucker, Lennart and Hutter, Frank},<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;booktitle={Neural Information Processing Systems Datasets and Benchmarks Track},<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;year={2024},<br>                
+                        }
+                    </div>        
+                </h6>
+            </div>                            
+        </div>
     </div>
-    <div class="col-md-7 col-sm-12 text-md-left text-center">              
-      <div class="col text-left text-md-left">
-        <h6 class="darkgray"><b>[C24] HW-GPT-Bench: Hardware-Aware Architecture Benchmark for Language Models</b></h6>
-        <p class="ssmall authors"><u><b>Rhea Sukthanker</b></u>, Arber Zela, Benedikt Staffler, Aaron Klein, Lennart Purucker, Jörg K. H. Franke, Frank Hutter</p>
-        <h6>
-          <span class="conf">NeurIPS DBT 2024 (To appear)</span><br>
-          <a href="https://arxiv.org/abs/2405.10299" target="_blank"><span class="badge badge-white">Project Page</span></a>
-          <a href="https://arxiv.org/abs/2405.10299" target="_blank"><span class="badge badge-white">Paper</span></a>      
-          <a href="https://github.com/automl/HW-GPT-Bench/" target="_blank"><span class="badge badge-white">Code</span></a>
-          <a type="button" class="badge badge-bibtexwhite" href="javascript:void(0)" onclick="show('bibc24')">BibTeX</a>                             
-          <div id="bibc24" class="popup">
-          @inproceedings{sukthanker2024hw,<br>
-              &nbsp;&nbsp;&nbsp;&nbsp;title={HW-GPT-Bench: Hardware-Aware Architecture Benchmark for Language Models},<br>
-              &nbsp;&nbsp;&nbsp;&nbsp;author={Sukthanker, Rhea Sanjay and Zela, Arber and Staffler, Benedikt and Klein, Aaron and Franke, Jörg KH and Purucker, Lennart and Hutter, Frank},<br>
-              &nbsp;&nbsp;&nbsp;&nbsp;booktitle={Neural Information Processing Systems Datasets and Benchmarks Track},<br>
-              &nbsp;&nbsp;&nbsp;&nbsp;year={2024},<br>                
-          }
-          </div>        
-        </h6>
-      </div>                            
+    <h6 class="secfont text-md-left" style="font-weight: 900"><em>2023</em></h6> 
+    <div class="row mt-2">            
+        <section id="neurips23-1"></section>
+        <div class="col-md-1 pb-3 text-md-right text-left"></div>
+        <div class="col-md-3 col-sm-11 pb-3 text-md-right text-left">
+            <img class="img-fluid rounded paper-img" src="./materials/concept/fairnas.png" alt="FairNAS concept" />
+        </div>
+        <div class="col-md-7 col-sm-12 text-md-left text-center">              
+            <div class="col text-left text-md-left">
+                <h6 class="darkgray"><b>[C23] Rethinking bias mitigation: Fairer architectures make for fairer face recognition</b></h6>
+                <p class="ssmall authors">Samuel Dooley*, <u><b>Rhea Sukthanker*</b></u>, John P. Dickerson, Colin White, Frank Hutter, Micah Goldblum</p>
+                <h6>
+                    <span class="conf">NeurIPS 2023 (oral)</span><br>
+                    <a href="https://arxiv.org/abs/2210.09943" target="_blank"><span class="badge badge-white">Project Page</span></a>
+                    <a href="https://arxiv.org/abs/2210.09943" target="_blank"><span class="badge badge-white">Paper</span></a>      
+                    <a href="https://github.com/dooleys/FR-NAS" target="_blank"><span class="badge badge-white">Code</span></a>
+                    <a class="badge badge-bibtexwhite" href="javascript:void(0)" onclick="show('bibc23')">BibTeX</a>                             
+                    <div id="bibc23" class="popup">
+                        @inproceedings{li2024selma,<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;title={Rethinking bias mitigation: Fairer architectures make for fairer face recognition},<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;author={Dooley, Samuel and Sukthanker, Rhea and Dickerson, John and White, Colin and Hutter, Frank and Goldblum, Micah},<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;booktitle={Neural Information Processing Systems},<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;year={2023},<br>                
+                        }
+                    </div>        
+                </h6>
+            </div>                            
+        </div>
     </div>
-  </div>
-
-  <!-- Add more publication entries as needed here -->
-
-</div> <!-- Close the dynamic content container -->
-
-
-                 
+    <div class="row mt-2">            
+        <section id="neurips23-2"></section>
+        <div class="col-md-1 pb-3 text-md-right text-left"></div>
+        <div class="col-md-3 col-sm-11 pb-3 text-md-right text-left">
+            <img class="img-fluid rounded paper-img" src="./materials/concept/hiernas.png" alt="HierNAS concept" />
+        </div>
+        <div class="col-md-7 col-sm-12 text-md-left text-center">              
+            <div class="col text-left text-md-left">
+                <h6 class="darkgray"><b>[C23] Construction of Hierarchical Neural Architecture Search Spaces based on Context-free Grammar</b></h6>
+                <p class="ssmall authors">Simon Schrodi, Danny Stoll, Binxin Ru, <u><b>Rhea Sanjay Sukthanker</b></u>, Thomas Brox, Frank Hutter</p>
+                <h6>
+                    <span class="conf">NeurIPS 2023</span><br>
+                    <a href="https://arxiv.org/abs/2210.09943" target="_blank"><span class="badge badge-white">Project Page</span></a>
+                    <a href="https://arxiv.org/abs/2210.09943" target="_blank"><span class="badge badge-white">Paper</span></a>      
+                    <a href="https://github.com/dooleys/FR-NAS" target="_blank"><span class="badge badge-white">Code</span></a>
+                    <a class="badge badge-bibtexwhite" href="javascript:void(0)" onclick="show('bibc23')">BibTeX</a>                             
+                    <div id="bibc23" class="popup">
+                        @inproceedings{schrodi2024construction,<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;title={Construction of Hierarchical Neural Architecture Search Spaces based on Context-free Grammar},<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;author={Schrodi, Simon and Stoll, Danny and Ru, Binxin and Sukthanker, Rhea Sanjay and Brox, Thomas and Hutter, Frank},<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;booktitle={Neural Information Processing Systems},<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;year={2023},<br>                
+                        }
+                    </div>        
+                </h6>
+            </div>                            
+        </div>
+    </div>
+</div>
+         
     
         
     
