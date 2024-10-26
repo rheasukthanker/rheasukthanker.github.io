@@ -1,16 +1,16 @@
 {
-    "name": "Jaehong Homepage",
+    "name": "Rhea Homepage",
     "version": "1.0.0",
     "description": "Personal Website",
     "main": "index.html",
     "repository": {
       "type": "git",
-      "url": "https://jaehong31.github.io"
+      "url": "https://rheasukthanker.github.io/"
     },
     "scripts": {
       "deploy": "gh-pages -d ./"
     },
-    "author": "Jaehong Yoon <jaehong.yoon@kaist.ac.kr>",
+    "author": "Rhea Sukthanker <sukthank@cs.uni-freiburg.de>",
     "license": "UNLICENSED",
     "dependencies": {
       "gh-pages": "^1.1.0"
