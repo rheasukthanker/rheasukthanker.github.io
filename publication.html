@@ -1,54 +1,51 @@
 <script>
     let pcallCounter = 22;
 
-    function addPCBContent(
-        name_,
-        year_,
-        title_, 
-        img_, 
-        author_, 
-        bib_author_, 
-        venue_, 
-        venue_full_name_, 
-        project_ = 'None', 
-        paper_ = 'None',
-        code_ = 'None') {
-      
-      const pcontainer = document.getElementById('pcontent-container');
-      const uniqueId = `bibc${pcallCounter}`; // unique id for BibTeX popup
-
+    function addPCBContent(name_,
+                          year_,
+                          title_, 
+                          img_, 
+                          author_, 
+                          bib_author_, 
+                          venue_, 
+                          venue_full_name_, 
+                          project_ = 'None', 
+                          paper_ = 'None',
+                          code_ = 'None') {
+      const pcontainer = document.getElementById('pcontent-container'); // Assuming you have a div with this ID to hold the content
       const phtmlContent = `
         <div class="row mt-2">
           <div class="col-md-1 pb-3 text-md-right text-left"></div>
           <div class="col-md-3 col-sm-11 pb-3 text-md-right text-left">
-            <img class="img-fluid rounded paper-img" src="./materials/concept_figures/${img_}" alt="${title_} concept" />
+            <img class="img-fluid rounded paper-img" src="./materials/concept_figures/${img_}" alt="concept" />
           </div>
           <div class="col-md-7 col-sm-12 text-md-left text-center">              
             <div class="col text-left text-md-left">
               <h6 class="darkgray"><b>[C${pcallCounter}] ${title_}</b></h6>
               <h6 class="ssmall authors">${author_.replace('Jaehong Yoon', '<u><b>Jaehong Yoon</b></u>')}</h6>
               <h6>
-                <span class="conf">${venue_} ${year_}</span><br>
-                ${project_ !== 'None' ? `<a href="${project_}" target="_blank"><b class="badge badge-white">Project Page</b></a>` : ''}
-                ${paper_ !== 'None' ? `<a href="${paper_}" target="_blank"><b class="badge badge-white">Paper</b></a>` : ''}
-                ${code_ !== 'None' ? `<a href="${code_}" target="_blank"><b class="badge badge-white">Code</b></a>` : ''}
-                <a class="badge badge-white" href="javascript:void(0)" onclick="show('${uniqueId}')">BibTeX</a>        
-                <div id="${uniqueId}" class="popup">
+                <span class="conf" style="margin-top: 0em; margin-bottom: 0em">
+                  ${venue_} ${year_}</span><br>
+                <a href="${project_}" target="_blank"><b class="badge badge-white">Project Page</b></a>
+                <a href="${paper_}" target="_blank"><b class="badge badge-white">Paper</b></a>
+                <a href="${code_}" target="_blank"><b class="badge badge-white">Code</b></a>
+                <a class="badge badge-white" href="javascript:void(0)" onclick="show('cbib${title_.replace(/\s+/g, '')}')">
+                  BibTeX</a>          
+                <div id="cbib${title_.replace(/\s+/g, '')}" class="popup">
                   @inproceedings{${name_},<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;title={${title_}},<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;author={${bib_author_}},<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;booktitle={${venue_full_name_}},<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;year={${year_}},<br>                
+                      &nbsp;&nbsp;&nbsp;&nbsp;title={${title_}},<br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;author={${bib_author_}},<br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;booktitle={${venue_full_name_}},<br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;year={${year_}},<br>                
                   }
                 </div>       
               </h6>
             </div>                            
           </div>
         </div>
-      `;
-
-      pcallCounter--; // decrement for the next entry
-      pcontainer.innerHTML += phtmlContent; // append new content
+        `;
+      pcallCounter--;
+      pcontainer.innerHTML += phtmlContent;
     }
 </script>
 
@@ -56,31 +53,203 @@
 <br>
 <h6 class="secfont text-md-left" style="font-weight: 900"><em>2024</em></h6>    
 
-<div id="pcontent-container"></div> <!-- Main container for all publications -->
-
-<!-- Existing Static Content Example, Adjust IDs for BibTeX Popups -->
+<div id="pcontent-container"> <!-- Ensure there's a div to hold the content -->
+    <div class="row mt-2">            
+        <section id="neurips24"></section>
+        <div class="col-md-1 pb-3 text-md-right text-left"></div>
+        <div class="col-md-3 col-sm-11 pb-3 text-md-right text-left">
+            <img class="img-fluid rounded paper-img" src="./materials/concept/hwgptbench.png" alt="HW-GPT-Bench concept" />
+        </div>
+        <div class="col-md-7 col-sm-12 text-md-left text-center">              
+            <div class="col text-left text-md-left">
+                <h6 class="darkgray"><b>[C24] HW-GPT-Bench: Hardware-Aware Architecture Benchmark for Language Models</b></h6>
+                <p class="ssmall authors"><u><b>Rhea Sukthanker</b></u>, Arber Zela, Benedikt Staffler, Aaron Klein, Lennart Purucker, Jörg K. H. Franke, Frank Hutter</p>
+                <h6>
+                    <span class="conf">NeurIPS DBT 2024 (To appear)</span><br>
+                    <a href="https://arxiv.org/abs/2405.10299" target="_blank"><span class="badge badge-white">Project Page</span></a>
+                    <a href="https://arxiv.org/abs/2405.10299" target="_blank"><span class="badge badge-white">Paper</span></a>      
+                    <a href="https://github.com/automl/HW-GPT-Bench/" target="_blank"><span class="badge badge-white">Code</span></a>
+                    <a class="badge badge-bibtexwhite" href="javascript:void(0)" onclick="show('bibc24')">BibTeX</a>                             
+                    <div id="bibc24" class="popup">
+                        @inproceedings{sukthanker2024hw,<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;title={HW-GPT-Bench: Hardware-Aware Architecture Benchmark for Language Models},<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;author={Sukthanker, Rhea Sanjay and Zela, Arber and Staffler, Benedikt and Klein, Aaron and Franke, Jörg KH and Purucker, Lennart and Hutter, Frank},<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;booktitle={Neural Information Processing Systems Datasets and Benchmarks Track},<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;year={2024},<br>                
+                        }
+                    </div>        
+                </h6>
+            </div>                            
+        </div>
+    </div>
+    <div id="pcontent-container"> <!-- Ensure there's a div to hold the content -->
+        <div class="row mt-2">            
+            <section id="automl24"></section>
+            <div class="col-md-1 pb-3 text-md-right text-left"></div>
+            <div class="col-md-3 col-sm-11 pb-3 text-md-right text-left">
+                <img class="img-fluid rounded paper-img" src="./materials/concept/tanglenas.png" alt="TangleNAS Concept" />
+            </div>
+            <div class="col-md-7 col-sm-12 text-md-left text-center">              
+                <div class="col text-left text-md-left">
+                    <h6 class="darkgray"><b>[C24] Weight-Entanglement Meets Gradient-Based Neural Architecture Search</b></h6>
+                    <p class="ssmall authors"><u><b>Rhea Sukthanker</b></u>, Arjun Krishnakumar, Mahmoud Safari, Frank Hutter</p>
+                    <h6>
+                        <span class="conf">AutoML 2024</span><br>
+                        <a href="https://openreview.net/pdf?id=4klsxqPerv" target="_blank"><span class="badge badge-white">Project Page</span></a>
+                        <a href="https://openreview.net/pdf?id=4klsxqPerv" target="_blank"><span class="badge badge-white">Paper</span></a>      
+                        <a href="https://github.com/automl/TangleNAS" target="_blank"><span class="badge badge-white">Code</span></a>
+                        <a class="badge badge-bibtexwhite" href="javascript:void(0)" onclick="show('bibc24')">BibTeX</a>                             
+                        <div id="bibc24" class="popup">
+                            @inproceedings{sukthanker2023weight,<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;title={Weight-Entanglement Meets Gradient-Based Neural Architecture Search},<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;author={Sukthanker, Rhea Sanjay and Krishnakumar, Arjun and Safari, Mahmoud and Hutter, Frank},<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;booktitle={International Conference on Automated Machine Learning},<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;year={2024},<br>                
+                            }
+                        </div>        
+                    </h6>
+                </div>                            
+            </div>
+        </div>
+    <h6 class="secfont text-md-left" style="font-weight: 900"><em>2023</em></h6> 
+    <div class="row mt-2">            
+        <section id="neurips23-1"></section>
+        <div class="col-md-1 pb-3 text-md-right text-left"></div>
+        <div class="col-md-3 col-sm-11 pb-3 text-md-right text-left">
+            <img class="img-fluid rounded paper-img" src="./materials/concept/fairnas.png" alt="FairNAS concept" />
+        </div>
+        <div class="col-md-7 col-sm-12 text-md-left text-center">              
+            <div class="col text-left text-md-left">
+                <h6 class="darkgray"><b>[C23] Rethinking bias mitigation: Fairer architectures make for fairer face recognition</b></h6>
+                <p class="ssmall authors">Samuel Dooley*, <u><b>Rhea Sukthanker*</b></u>, John P. Dickerson, Colin White, Frank Hutter, Micah Goldblum</p>
+                <h6>
+                    <span class="conf">NeurIPS 2023 (oral)</span><br>
+                    <a href="https://arxiv.org/abs/2210.09943" target="_blank"><span class="badge badge-white">Project Page</span></a>
+                    <a href="https://arxiv.org/abs/2210.09943" target="_blank"><span class="badge badge-white">Paper</span></a>      
+                    <a href="https://github.com/dooleys/FR-NAS" target="_blank"><span class="badge badge-white">Code</span></a>
+                    <a class="badge badge-bibtexwhite" href="javascript:void(0)" onclick="show('bibc23')">BibTeX</a>                             
+                    <div id="bibc23" class="popup">
+                        @inproceedings{dooley2024rethinking,<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;title={Rethinking bias mitigation: Fairer architectures make for fairer face recognition},<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;author={Dooley, Samuel and Sukthanker, Rhea and Dickerson, John and White, Colin and Hutter, Frank and Goldblum, Micah},<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;booktitle={Neural Information Processing Systems},<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;year={2023},<br>                
+                        }
+                    </div>        
+                </h6>
+            </div>                            
+        </div>
+    </div>
+    <div class="row mt-2">            
+        <section id="neurips23-2"></section>
+        <div class="col-md-1 pb-3 text-md-right text-left"></div>
+        <div class="col-md-3 col-sm-11 pb-3 text-md-right text-left">
+            <img class="img-fluid rounded paper-img" src="./materials/concept/hiernas.png" alt="HierNAS concept" />
+        </div>
+        <div class="col-md-7 col-sm-12 text-md-left text-center">              
+            <div class="col text-left text-md-left">
+                <h6 class="darkgray"><b>[C23] Construction of Hierarchical Neural Architecture Search Spaces based on Context-free Grammar</b></h6>
+                <p class="ssmall authors">Simon Schrodi, Danny Stoll, Binxin Ru, <u><b>Rhea Sanjay Sukthanker</b></u>, Thomas Brox, Frank Hutter</p>
+                <h6>
+                    <span class="conf">NeurIPS 2023</span><br>
+                    <a href="https://arxiv.org/abs/2210.09943" target="_blank"><span class="badge badge-white">Project Page</span></a>
+                    <a href="https://arxiv.org/abs/2210.09943" target="_blank"><span class="badge badge-white">Paper</span></a>      
+                    <a href="https://github.com/dooleys/FR-NAS" target="_blank"><span class="badge badge-white">Code</span></a>
+                    <a class="badge badge-bibtexwhite" href="javascript:void(0)" onclick="show('bibc23')">BibTeX</a>                             
+                    <div id="bibc23" class="popup">
+                        @inproceedings{schrodi2024construction,<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;title={Construction of Hierarchical Neural Architecture Search Spaces based on Context-free Grammar},<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;author={Schrodi, Simon and Stoll, Danny and Ru, Binxin and Sukthanker, Rhea Sanjay and Brox, Thomas and Hutter, Frank},<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;booktitle={Neural Information Processing Systems},<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;year={2023},<br>                
+                        }
+                    </div>        
+                </h6>
+            </div>                            
+        </div>
+    </div>
+</div>
+<h6 class="secfont text-md-left" style="font-weight: 900"><em>2022</em></h6> 
 <div class="row mt-2">            
-    <section id="neurips24"></section>
+    <section id="cvpr2022"></section>
     <div class="col-md-1 pb-3 text-md-right text-left"></div>
     <div class="col-md-3 col-sm-11 pb-3 text-md-right text-left">
-        <img class="img-fluid rounded paper-img" src="./materials/concept/hwgptbench.png" alt="HW-GPT-Bench concept" />
+        <img class="img-fluid rounded paper-img" src="./materials/concept/attnflow.png" alt="Attnflow concept" />
     </div>
     <div class="col-md-7 col-sm-12 text-md-left text-center">              
         <div class="col text-left text-md-left">
-            <h6 class="darkgray"><b>[C24] HW-GPT-Bench: Hardware-Aware Architecture Benchmark for Language Models</b></h6>
-            <p class="ssmall authors"><u><b>Rhea Sukthanker</b></u>, Arber Zela, Benedikt Staffler, Aaron Klein, Lennart Purucker, Jörg K. H. Franke, Frank Hutter</p>
+            <h6 class="darkgray"><b>[C22] Generative flows with invertible attentions</b></h6>
+            <p class="ssmall authors"><u><b>Rhea Sukthanker</b></u>, Zhiwu Huang, Suryansh Kumar, Radu Timofte, Luc Van Gool</p>
             <h6>
-                <span class="conf">NeurIPS DBT 2024 (To appear)</span><br>
-                <a href="https://arxiv.org/abs/2405.10299" target="_blank"><span class="badge badge-white">Project Page</span></a>
-                <a href="https://arxiv.org/abs/2405.10299" target="_blank"><span class="badge badge-white">Paper</span></a>      
-                <a href="https://github.com/automl/HW-GPT-Bench/" target="_blank"><span class="badge badge-white">Code</span></a>
-                <a class="badge badge-bibtexwhite" href="javascript:void(0)" onclick="show('bibNeurips24')">BibTeX</a>                             
-                <div id="bibNeurips24" class="popup">
-                    @inproceedings{sukthanker2024hw,<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;title={HW-GPT-Bench: Hardware-Aware Architecture Benchmark for Language Models},<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;author={Sukthanker, Rhea Sanjay and Zela, Arber and Staffler, Benedikt and Klein, Aaron and Franke, Jörg KH and Purucker, Lennart and Hutter, Frank},<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;booktitle={Neural Information Processing Systems Datasets and Benchmarks Track},<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;year={2024},<br>                
+                <span class="conf">CVPR 2022</span><br>
+                <a href="https://openaccess.thecvf.com/content/CVPR2022/papers/Sukthanker_Generative_Flows_With_Invertible_Attentions_CVPR_2022_paper.pdf" target="_blank"><span class="badge badge-white">Project Page</span></a>
+                <a href="https://openaccess.thecvf.com/content/CVPR2022/papers/Sukthanker_Generative_Flows_With_Invertible_Attentions_CVPR_2022_paper.pdf" target="_blank"><span class="badge badge-white">Paper</span></a>      
+                <a href="https://openaccess.thecvf.com/content/CVPR2022/papers/Sukthanker_Generative_Flows_With_Invertible_Attentions_CVPR_2022_paper.pdf" target="_blank"><span class="badge badge-white">Code</span></a>
+                <a class="badge badge-bibtexwhite" href="javascript:void(0)" onclick="show('bibc23')">BibTeX</a>                             
+                <div id="bibc23" class="popup">
+                    @inproceedings{sukthanker2022generative,<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;title={Generative flows with invertible attentions},<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;author={DSukthanker, Rhea Sanjay and Huang, Zhiwu and Kumar, Suryansh and Timofte, Radu and Van Gool, Luc},<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;year={2022},<br>                
+                    }
+                </div>        
+            </h6>
+        </div>                            
+    </div>
+</div>
+<h6 class="secfont text-md-left" style="font-weight: 900"><em>2021</em></h6> 
+<div class="row mt-2">            
+    <section id="ijcai2021"></section>
+    <div class="col-md-1 pb-3 text-md-right text-left"></div>
+    <div class="col-md-3 col-sm-11 pb-3 text-md-right text-left">
+        <img class="img-fluid rounded paper-img" src="./materials/concept/spdnetnas.png" alt="SPDNetNAS concept" />
+    </div>
+    <div class="col-md-7 col-sm-12 text-md-left text-center">              
+        <div class="col text-left text-md-left">
+            <h6 class="darkgray"><b>[C21] Neural Architecture Search of SPD Manifold Networks</b></h6>
+            <p class="ssmall authors"><u><b>Rhea Sukthanker</b></u>, Zhiwu Huang, Suryansh Kumar, Erik Goron Endsjo, Yan Wu, Luc Van Gool</p>
+            <h6>
+                <span class="conf">IJCAI 2021</span><br>
+                <a href="https://www.ijcai.org/proceedings/2021/0413.pdf" target="_blank"><span class="badge badge-white">Project Page</span></a>
+                <a href="https://www.ijcai.org/proceedings/2021/0413.pdf" target="_blank"><span class="badge badge-white">Paper</span></a>      
+                <a href="https://github.com/rheasukthanker/SPDNetNAS" target="_blank"><span class="badge badge-white">Code</span></a>
+                <a class="badge badge-bibtexwhite" href="javascript:void(0)" onclick="show('bibc23')">BibTeX</a>                             
+                <div id="bibc23" class="popup">
+                    @inproceedings{ijcai2021-413,<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;title={Neural Architecture Search of SPD Manifold Networks},<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;author={Sukthanker, Rhea Sanjay and Huang, Zhiwu and Kumar, Suryansh and Endsjo, Erik Goron and Wu, Yan and Van Gool, Luc},<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;booktitle={Proceedings of the Thirtieth International Joint Conference on Artificial Intelligence, {IJCAI-21}},<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;year={2021},<br>                
+                    }
+                </div>        
+            </h6>
+        </div>                            
+    </div>
+</div>
+<h6 class="secfont text-md-left" style="font-weight: 900"><em>2020</em></h6> 
+<div class="row mt-2">            
+    <section id="information-fusion">Anaphora and coreference resolution: A review</section>
+    <div class="col-md-1 pb-3 text-md-right text-left"></div>
+    <div class="col-md-3 col-sm-11 pb-3 text-md-right text-left">
+        <img class="img-fluid rounded paper-img" src="./materials/concept/anaphora.png" alt="Anaphora concept" />
+    </div>
+    <div class="col-md-7 col-sm-12 text-md-left text-center">              
+        <div class="col text-left text-md-left">
+            <h6 class="darkgray"><b>[C20] Anaphora and coreference resolution: A review</b></h6>
+            <p class="ssmall authors"><u><b>Rhea Sukthanker</b></u>, Soujanya Poria, Erik Cambria, Ramkumar Thirunavukarasu</p>
+            <h6>
+                <span class="conf">Information Fusion 2020 (IF 14.7)</span><br>
+                <a href="https://www.sentic.net/anaphora-and-coreference-resolution.pdf" target="_blank"><span class="badge badge-white">Project Page</span></a>
+                <a href="https://www.sentic.net/anaphora-and-coreference-resolution.pdf" target="_blank"><span class="badge badge-white">Paper</span></a>      
+                <a href="https://www.sentic.net/anaphora-and-coreference-resolution.pdf" target="_blank"><span class="badge badge-white">Code</span></a>
+                <a class="badge badge-bibtexwhite" href="javascript:void(0)" onclick="show('bibc23')">BibTeX</a>                             
+                <div id="bibc23" class="popup">
+                    @inproceedings{sukthanker2020anaphora,<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;title={Anaphora and coreference resolution: A review},<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;author={Sukthanker, Rhea and Poria, Soujanya and Cambria, Erik and Thirunavukarasu, Ramkumar},<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;booktitle={Information Fusion},<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;year={2020},<br>                
                     }
                 </div>        
             </h6>
