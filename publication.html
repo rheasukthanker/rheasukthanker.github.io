@@ -1,5 +1,6 @@
 <script>
-    let pcallCounter = 22;
+    let pcallCounter = 24; // Updated initial counter to match the first publication's index
+
     function addPCBContent(name_,
                           year_,
                           title_, 
@@ -11,12 +12,12 @@
                           project_='None', 
                           paper_='None',
                           code_='None') {
-      const pcontainer = document.getElementById('pcontent-container'); // Assuming you have a div with this ID to hold the content
-      const phtmlContent = `
+        const pcontainer = document.getElementById('pcontent-container'); // Ensure this ID exists in your HTML
+        const phtmlContent = `
         <div class="row mt-2">
           <div class="col-md-1 pb-3 text-md-right text-left"></div>
           <div class="col-md-3 col-sm-11 pb-3 text-md-right text-left">
-            <img class="img-fluid rounded paper-img" src="./materials/concept_figures/${img_}" alt="concept" >
+            <img class="img-fluid rounded paper-img" src="./materials/concept_figures/${img_}" alt="concept">
           </div>
           <div class="col-md-7 col-sm-12 text-md-left text-center">              
             <div class="col text-left text-md-left">
@@ -43,20 +44,21 @@
           </div>
         </div>
         `;
-      pcallCounter--;
-      pcontainer.innerHTML += phtmlContent;
+        pcallCounter++; // Increment after adding
+        pcontainer.innerHTML += phtmlContent; // Append new HTML content
     }
-  </script>    
-  
-  <h3 class="secfont text-md-left">Publications</h3>
-  <br>
-  <h6 class="secfont text-md-left" style="font-weight: 900"><am>2024</am></h6>    
-                  
+</script>    
+
+<h3 class="secfont text-md-left">Publications</h3>
+<br>
+<h6 class="secfont text-md-left" style="font-weight: 900"><em>2024</em></h6>    
+
+<div id="pcontent-container"> <!-- Added this div to hold dynamic content -->
   <div class="row mt-2">            
-    <section id="colm24"></section>
+    <section id="neurips24"></section>
     <div class="col-md-1 pb-3 text-md-right text-left"></div>
     <div class="col-md-3 col-sm-11 pb-3 text-md-right text-left">
-        <img class="img-fluid rounded paper-img" src="./materials/concept/llmcompression.png" alt="concept" >
+        <img class="img-fluid rounded paper-img" src="./materials/concept/hwgptbench.png" alt="concept">
     </div>
     <div class="col-md-7 col-sm-12 text-md-left text-center">              
       <div class="col text-left text-md-left">
@@ -68,11 +70,11 @@
           <a href="https://arxiv.org/abs/2405.10299" target="_blank"><span class="badge badge-white">Paper</span></a>      
           <a href="https://github.com/automl/HW-GPT-Bench/" target="_blank"><span class="badge badge-white">Code</span></a>
           <a type="button" class="badge badge-bibtexwhite" href="javascript:void(0)" onclick="show('bibc24')">BibTeX</a>                             
-          <div id="bibc24"  class="popup">
-          @inproceedings{li2024selma,<br>
-              &nbsp;&nbsp;&nbsp;&nbsp;title={SELMA: Learning and Merging Skill-Specific Text-to-Image Experts with Auto-Generated Data},<br>
-              &nbsp;&nbsp;&nbsp;&nbsp;author={Li, Jialu and Cho, Jaemin and Sung, Yi-lin and Yoon, Jaehong and Bansal, Mohit},<br>
-              &nbsp;&nbsp;&nbsp;&nbsp;booktitle={Neural Information Processing Systems},<br>
+          <div id="bibc24" class="popup">
+          @inproceedings{sukthanker2024hw,<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;title={HW-GPT-Bench: Hardware-Aware Architecture Benchmark for Language Models},<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;author={Sukthanker, Rhea Sanjay and Zela, Arber and Staffler, Benedikt and Klein, Aaron and Franke, Jörg KH and Purucker, Lennart and Hutter, Frank},<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;booktitle={Neural Information Processing Systems Datasets and Benchmarks Track},<br>
               &nbsp;&nbsp;&nbsp;&nbsp;year={2024},<br>                
           }
           </div>        
@@ -80,6 +82,11 @@
       </div>                            
     </div>
   </div>
+
+  <!-- Add more publication entries as needed here -->
+
+</div> <!-- Close the dynamic content container -->
+
 
                  
     
