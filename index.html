@@ -199,7 +199,7 @@
             <a href="https://zhiwu-huang.github.io/" target="_blank"><blu>Dr. Zhiwu Huang</blu></a>  and   
             <a href="https://suryanshkumar.github.io/" target="_blank"><blu>Dr. Suryansh Kumar</blu></a>. I was awarded the prestigious
             <a href="https://ethz.ch/students/en/studies/financial/scholarships/excellencescholarship.html" target="_blank"><blu>ESOP</blu></a> scholarship for my masters studies.
-            I received my Bachelor's degree from <a href="https://vit.ac.in/" target="_blank"><blu>Vellore Institute of Technology (VIT)</blu></a>. During my Ph.D. studies I have also interned at the Applied Sciences Group (ASG) at Microsoft Cambridge, where I worked on 2-bit quantization and finetuning, supervised by <a href="https://www.linkedin.com/in/pashmina-cameron-7424b51/" target="_blank"><blu>Dr. Pashmina Cameron</blu></a> and <a href="https://www.microsoft.com/en-us/research/people/jameshensman/" target="_blank"><blu> Dr. James Hensman</blu></a>.        
+            I received my Bachelor's degree from <a href="https://vit.ac.in/" target="_blank"><blu>Vellore Institute of Technology (VIT)</blu></a>. I am currently a Senior Researcher at Microsoft, Redmond in the Applied Sciences Team. During my Ph.D. studies I also interned at the Applied Sciences Group (ASG) at Microsoft Cambridge, where I worked on 2-bit quantization and finetuning, supervised by <a href="https://www.linkedin.com/in/pashmina-cameron-7424b51/" target="_blank"><blu>Dr. Pashmina Cameron</blu></a> and <a href="https://www.microsoft.com/en-us/research/people/jameshensman/" target="_blank"><blu> Dr. James Hensman</blu></a>.        
             <br>            
             <br>            
             My research focuses on automating and optimizing foundation model inference-particularly for large language models (LLMs) and vision models-to facilitate inference efficiency in their real-world applications. While training these models incurs a significant but one-time expense, the costs of inference can escalate quickly over the model's lifecycle. To address this, my work develops automated techniques for pruning, quantization, and knowledge distillation, reducing the manual effort in tuning these methods. Ultimately, my goal is to make foundation models more accessible and sustainable across diverse domains. As an open-source effort towards this goal, I develop and maintain the library <a href="https://github.com/whittle-org/whittle" target="_blank"><blu>whittle</blu></a>, with several others. 
@@ -213,7 +213,7 @@
                     <blu>Large Language Model Compression with Neural Architecture Search (NeurIPS 2024 Compression Workshop)</blu></a>.</li>
               <li><a href="https://arxiv.org/abs/2405.10299" target="_blank" class="note" style="font-size:0.9em">
                 <blu>HW-GPT-Bench: Hardware-Aware Architecture Benchmark for Language Models (NeurIPS DBT 2024)</blu></a></li>
-             <li><a href="https://arxiv.org/abs/2510.07227" target="_blank" class="note"  style="font-size:0.9em"><blu>Where to Begin: Efficient Pretraining via Subnetwork Selection and Distillation</blu></a>.</li>
+             <li><a href="https://openreview.net/pdf?id=SOPQvcHa9L" target="_blank" class="note"  style="font-size:0.9em"><blu>Where to Begin: Efficient Pretraining via Subnetwork Selection and Distillation (AutoML 2026, oral)</blu></a>.</li>
             </ul>
             <li style="margin-top: -12px"><span class="note" style="font-size:1em"><b>Efficient and Multi-Objective Neural Architecture Search.</b></span></li>
             <ul>
@@ -249,9 +249,9 @@
               </div>
             </div> -->
             <div class="col-12 text-md-left" style="line-height:120%;">
-                <rd class="bbold ">10. 2025</rd>&nbsp;&nbsp;&nbsp;&nbsp;
-                <a class="note">(NEW!) New preprint released; Check out </a>      
-                <a href="https://arxiv.org/abs/2510.07227" target="_blank" class="note" style="font-size:0.9em"><blu>Where to Begin: Efficient Pretraining via Subnetwork Selection and Distillation</blu></a><a class="note">.</a>                   
+                <rd class="bbold ">07. 2026</rd>&nbsp;&nbsp;&nbsp;&nbsp;
+                <a class="note">(NEW!) Started as Senior Researcher at Microsoft, Redmond, and our paper </a>      
+                <a href="https://openreview.net/pdf?id=SOPQvcHa9L" target="_blank" class="note" style="font-size:0.9em"><blu>Where to Begin: Efficient Pretraining via Subnetwork Selection and Distillation</blu></a><a class="note"> was accepted for oral presentation at AutoML 2026.</a>                   
               </div>
             </div>
 
@@ -372,7 +372,7 @@
           <script>
             let callCounter = 6;
             let rs_ = 'https://rheasukthanker.github.io/';
-            function addArxivContent(year_, name_, arxiv_, img_, title_, author_, bib_author_, project_= rs_, code_ = rs_) {
+            function addArxivContent(year_, name_, arxiv_, img_, title_, author_, bib_author_, project_= rs_, code_ = rs_, paper_ = `https://arxiv.org/abs/${arxiv_}`, venueLabel_ = 'arXiv') {
               const container = document.getElementById('content-container'); // Assuming you have a div with this ID to hold the content
               const projectPageBadge = project_ !== rs_ ? `<a href="${project_}" target="_blank"><b class="badge badge-white">Project Page</b></a>` : '';
               const htmlContent = `
@@ -387,9 +387,9 @@
                       <h6 class="ssmall authors">${author_.replace('Jaehong Yoon', '<u><b>Jaehong Yoon</b></u>')}</h6>
                       <h6>
                         <a class="pprint" style="margin-top: 0em; margin-bottom: 0em">
-                          arXiv ${year_}</a>&nbsp;&nbsp;&nbsp;&nbsp;<br>
+                          ${venueLabel_} ${year_}</a>&nbsp;&nbsp;&nbsp;&nbsp;<br>
                         ${projectPageBadge} <!-- Only add this if project_ is not equal to rs_ -->
-                        <a href="https://arxiv.org/abs/${arxiv_}" target="_blank"><b class="badge badge-white">Paper</b></a>
+                        <a href="${paper_}" target="_blank"><b class="badge badge-white">Paper</b></a>
                         <a href="${code_}" target="_blank"><b class="badge badge-white">Code</b></a>
                         <a type="button" class="badge badge-white" href="javascript:void(0)" onclick="show('bib${title_.replace(/\s+/g, '')}')">
                           Bibtex</a>          
@@ -409,12 +409,14 @@
               callCounter--;
               container.innerHTML += htmlContent;
             }
-            addArxivContent(2025, 'krishnakumar2025where', '2510.07227', 'whittle.png', 
+            addArxivContent(2026, 'krishnakumar2026where', '2510.07227', 'whittle.png', 
                    'Where to Begin: Efficient Pretraining via Subnetwork Selection and Distillation', 
                    'Arjun Krishnakumar*, Rhea Sanjay Sukthanker*, Hannan Javed Mahadik*, Gabriela Kadlecová, Vladyslav Moroshan, Timur Carstensen, Frank Hutter, Aaron Klein',
                    'Krishnakumar, Arjun and Sukthanker, Rhea Sanjay and Mahadik, Hannan Javed and Kadlecová, Gabriela and Moroshan, Vladyslav and Carstensen, Timur and Hutter, Frank and Klein, Aaron',
-                   'https://arxiv.org/abs/2510.07227',
-                   'https://github.com/whittle-org/whittle/');
+                   'https://openreview.net/pdf?id=SOPQvcHa9L',
+                   'https://github.com/whittle-org/whittle/',
+                   'https://openreview.net/pdf?id=SOPQvcHa9L',
+                   'AutoML');
             addArxivContent(2024, 'sukthanker2024large', '2410.06479', 'llmcompression.png', 
                    'Large Language Model Compression with Neural Architecture Search', 
                    'Rhea Sanjay Sukthanker, Benedikt Staffler, Frank Hutter, Aaron Klein',
