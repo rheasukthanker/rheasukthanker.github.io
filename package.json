@@ -10,7 +10,7 @@
     "scripts": {
       "deploy": "gh-pages -d ./"
     },
-    "author": "Rhea Sukthanker <sukthank@cs.uni-freiburg.de>",
+    "author": "Rhea Sukthanker <rsukthanker@microsoft.com>",
     "license": "UNLICENSED",
     "dependencies": {
       "gh-pages": "^1.1.0"
