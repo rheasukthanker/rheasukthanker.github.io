@@ -154,8 +154,16 @@
                   <a class="note" style="font-size:1.1em"> Redmond, WA, USA</a>
                 </div>              
                 <div class="col-12">
-                  <a class="note" style="font-size:1.1em">sukthank [at] cs [dot] uni-freiburg [dot] de</a>
-                </div>              
+                  <a class="note" style="font-size:1.1em"><span class="obfuscated-email" data-user="sukthank" data-domain="cs.uni-freiburg.de"></span></a>
+                </div>
+                <div class="col-12">
+                  <a class="note" style="font-size:1.1em">For collaborations or to reach out, email me at <span class="obfuscated-email" data-user="rsukthanker" data-domain="microsoft.com"></span></a>
+                </div>
+                <noscript>
+                  <div class="col-12">
+                    <a class="note" style="font-size:1.1em">sukthank [at] cs [dot] uni-freiburg [dot] de &nbsp;|&nbsp; rsukthanker [at] microsoft [dot] com</a>
+                  </div>
+                </noscript>
               </div>
               <div class="row pb-2" style="text-align: center; margin-top: -20px">
                 <div class="col-12">
@@ -205,7 +213,7 @@
             I received my Bachelor's degree from <a href="https://vit.ac.in/" target="_blank"><blu>Vellore Institute of Technology (VIT)</blu></a>. During my Ph.D. studies I also interned at the Applied Sciences Group (ASG) at Microsoft Cambridge, where I worked on 2-bit quantization and finetuning, supervised by <a href="https://www.linkedin.com/in/pashmina-cameron-7424b51/" target="_blank"><blu>Dr. Pashmina Cameron</blu></a> and <a href="https://www.microsoft.com/en-us/research/people/jameshensman/" target="_blank"><blu> Dr. James Hensman</blu></a>.        
             <br>            
             <br>            
-            My research focuses on automating and optimizing foundation model inference-particularly for large language models (LLMs) and vision models-to facilitate inference efficiency in their real-world applications. While training these models incurs a significant but one-time expense, the costs of inference can escalate quickly over the model's lifecycle. To address this, my work develops automated techniques for pruning, quantization, and knowledge distillation, reducing the manual effort in tuning these methods. Ultimately, my goal is to make foundation models more accessible and sustainable across diverse domains. As an open-source effort towards this goal, I develop and maintain the library <a href="https://github.com/whittle-org/whittle" target="_blank"><blu>whittle</blu></a>, with several others. 
+            My research focuses on automating and optimizing foundation model inference-particularly for large language models (LLMs) and vision models-to facilitate inference efficiency in their real-world applications. While training these models incurs a significant but one-time expense, the costs of inference can escalate quickly over the model's lifecycle. To address this, my work develops automated techniques for pruning, quantization, and knowledge distillation, reducing the manual effort in tuning these methods. Ultimately, my goal is to make foundation models more accessible and sustainable across diverse domains. As an open-source effort towards this goal, I co-developed the library <a href="https://github.com/whittle-org/whittle" target="_blank"><blu>whittle</blu></a>, with several others. 
             <br>
             <br>
             My recent research interests include the following topics:            
@@ -527,5 +535,31 @@
       </div>
       <!-- Footer End -->
     </div>
+    <script>
+      // Assemble email addresses at runtime to reduce automated scraping/harvesting.
+      (function () {
+        function decorate() {
+          var nodes = document.querySelectorAll('.obfuscated-email');
+          for (var i = 0; i < nodes.length; i++) {
+            var el = nodes[i];
+            var user = el.getAttribute('data-user');
+            var domain = el.getAttribute('data-domain');
+            if (!user || !domain) { continue; }
+            var address = user + String.fromCharCode(64) + domain;
+            var link = document.createElement('a');
+            link.href = 'mailto:' + address;
+            link.textContent = address;
+            link.className = 'note';
+            el.textContent = '';
+            el.appendChild(link);
+          }
+        }
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', decorate);
+        } else {
+          decorate();
+        }
+      })();
+    </script>
   </body>
 </html>
