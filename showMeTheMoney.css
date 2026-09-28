@@ -622,3 +622,177 @@
   a{text-decoration:none;color:#fff;font-size:15px}
   nav{width:80%;overflow:hidden;height:80px;background-color:#1b2035;margin:50px auto} */
   
+/* =========================================================
+   Visual enhancement layer (2026) — additive, non-breaking
+   ========================================================= */
+:root {
+  --accent: #2c8fb0;
+  --accent-soft: #e8f4f8;
+  --accent-dark: #1f6f8b;
+  --ink: #1f2937;
+  --muted: #6b7280;
+}
+
+html { scroll-behavior: smooth; }
+section { scroll-margin-top: 90px; }
+
+/* ---------- Navbar ---------- */
+.navbar.fixed-top.bg-light {
+  background: rgba(255,255,255,0.92) !important;
+  backdrop-filter: saturate(160%) blur(8px);
+  -webkit-backdrop-filter: saturate(160%) blur(8px);
+  box-shadow: 0 2px 14px rgba(0,0,0,0.06);
+  border-bottom: 1px solid rgba(0,0,0,0.04);
+  padding: 0.5rem 1.25rem;
+}
+.navbar-brand {
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  color: var(--ink) !important;
+}
+.navbar-nav .nav-link {
+  position: relative;
+  color: #444 !important;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.4rem 0.85rem !important;
+  transition: color 0.2s ease;
+}
+.navbar-nav .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0.85rem;
+  right: 0.85rem;
+  bottom: 0.2rem;
+  height: 2px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+  border-radius: 2px;
+}
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active-nav { color: var(--accent-dark) !important; }
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link.active-nav::after { transform: scaleX(1); }
+
+/* CV pill */
+.navbar-nav .nav-link[href$="resume.pdf"] {
+  background: var(--accent);
+  color: #fff !important;
+  border-radius: 20px;
+  padding: 0.35rem 1rem !important;
+  margin-left: 0.35rem;
+}
+.navbar-nav .nav-link[href$="resume.pdf"]:hover { background: var(--accent-dark); }
+.navbar-nav .nav-link[href$="resume.pdf"]::after { display: none; }
+
+/* Personal link accent */
+.navbar-nav .nav-link[href="personal.html"] { color: var(--accent) !important; }
+
+/* Dark mode toggle button */
+#mode-toggle {
+  background: transparent;
+  border: 1px solid rgba(0,0,0,0.12);
+  border-radius: 20px;
+  padding: 0.25rem 0.8rem;
+  font-size: 0.85rem !important;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+#mode-toggle:hover { background: var(--accent-soft); border-color: var(--accent); }
+
+/* ---------- Profile / hero ---------- */
+.profile-img {
+  border: 4px solid #fff;
+  box-shadow: 0 8px 26px rgba(0,0,0,0.14);
+  outline: 3px solid var(--accent-soft);
+}
+h3.bbbold { letter-spacing: 0.2px; }
+
+/* Social icons */
+.note .fab, .note .ai, .note .fas {
+  transition: transform 0.18s ease, color 0.18s ease;
+}
+.note a:hover .fab, .note a:hover .ai, .note a:hover .fas {
+  transform: translateY(-3px) scale(1.08);
+  color: var(--accent) !important;
+}
+
+/* ---------- Section headings ---------- */
+.secfont {
+  position: relative;
+  padding-bottom: 6px;
+}
+.col-md-2 > .secfont.text-md-right::after,
+.col-md-2 > .secfont::after {
+  content: "";
+  display: block;
+  width: 42px;
+  height: 3px;
+  margin-top: 8px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-soft));
+  border-radius: 3px;
+}
+.text-md-right.secfont::after { margin-left: auto; }
+
+/* ---------- Links ---------- */
+blu { transition: color 0.15s ease; }
+a:hover blu { color: var(--accent-dark) !important; text-decoration: underline; }
+
+/* ---------- News / publication hover cards ---------- */
+#news .row.no-gutters .col-12,
+#publications .row.mt-2 {
+  transition: background 0.2s ease, transform 0.2s ease;
+  border-radius: 8px;
+}
+#news .row.no-gutters:hover .col-12 { background: var(--accent-soft); }
+
+/* ---------- Back to top button ---------- */
+#backToTop {
+  position: fixed;
+  right: 22px;
+  bottom: 26px;
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  font-size: 1.1rem;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  transition: opacity 0.25s ease, transform 0.25s ease, background 0.2s ease;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+  z-index: 1050;
+}
+#backToTop.show { opacity: 1; visibility: visible; transform: translateY(0); }
+#backToTop:hover { background: var(--accent-dark); }
+
+/* Dark-mode adjustments for enhancement layer */
+body.dark-mode .navbar.fixed-top.bg-light {
+  background: rgba(40,40,46,0.92) !important;
+  border-bottom-color: rgba(255,255,255,0.06);
+}
+body.dark-mode .navbar-brand,
+body.dark-mode .navbar-nav .nav-link { color: #e6e6e6 !important; }
+body.dark-mode #mode-toggle { color: #eee; border-color: rgba(255,255,255,0.2); }
+body.dark-mode .profile-img { outline-color: rgba(255,255,255,0.08); border-color:#2b2b32; }
+
+/* ---------- Navbar text fixes (override global ul/li line-height:0) ---------- */
+.navbar-nav.navbar-menu { line-height: normal !important; margin-top: 0 !important; margin-bottom: 0 !important; flex-wrap: wrap; }
+.navbar-nav .nav-item { line-height: normal !important; margin: 0 !important; }
+.navbar-nav .nav-link {
+  white-space: nowrap;
+  line-height: 1.4 !important;
+  font-size: 0.9rem;
+  padding: 0.4rem 0.7rem !important;
+}
+#mode-toggle {
+  line-height: 1.2 !important;
+  white-space: nowrap;
+  font-size: 0.8rem !important;
+  padding: 0.3rem 0.7rem !important;
+}
+.navbar-nav .nav-link[href$="resume.pdf"] { padding: 0.3rem 0.9rem !important; }
