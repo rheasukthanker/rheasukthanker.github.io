@@ -234,6 +234,16 @@
           <div class="col-12 col-md-10 no-gutters">
             <div class="row no-gutters">
             <div class="col-12 text-md-left" style="line-height:120%;">
+                <rd class="bbold ">10. 2026</rd>&nbsp;&nbsp;&nbsp;&nbsp;
+                <a class="note">(NEW!) Two new preprints released; check out </a>
+                <a href="https://arxiv.org/abs/2610.28537" target="_blank" class="note" style="color:#44a5c0;"><b><i>Beyond 4 bits: Data-Centric Post-training Quantization and Recovery</i></b></a>
+                <a class="note"> and </a>
+                <a href="https://arxiv.org/pdf/2608.28444" target="_blank" class="note" style="color:#44a5c0;"><b><i>Sliding-window beats linear attention</i></b></a>
+                <a class="note">.</a>
+              </div>
+            </div>
+            <div class="row no-gutters">
+            <div class="col-12 text-md-left" style="line-height:120%;">
                 <rd class="bbold ">09. 2026</rd>&nbsp;&nbsp;&nbsp;&nbsp;
                 <a class="note">(NEW!) Our paper </a>
                 <a href="https://openreview.net/pdf?id=SOPQvcHa9L" target="_blank" class="note" style="font-size:0.9em"><blu>whittle: A Library for Sub-Network Extraction from Large Language Models</blu></a>
@@ -373,7 +383,7 @@
           <div id="content-container">
           </div>
           <script>
-            let callCounter = 6;
+            let callCounter = 8;
             let rs_ = 'https://rheasukthanker.github.io/';
             function addArxivContent(year_, name_, arxiv_, img_, title_, author_, bib_author_, project_= rs_, code_ = rs_, paper_ = `https://arxiv.org/abs/${arxiv_}`, venueLabel_ = 'arXiv') {
               const container = document.getElementById('content-container'); // Assuming you have a div with this ID to hold the content
@@ -412,6 +422,18 @@
               callCounter--;
               container.innerHTML += htmlContent;
             }
+            addArxivContent(2026, 'sukthanker2026beyond', '2610.28537', 'beyond4bits.png', 
+                   'Beyond 4 bits: Data-Centric Post-training Quantization and Recovery', 
+                   'Rhea Sanjay Sukthanker, Riccardo Grazzi, James Hensman, Pashmina Cameron',
+                   'Sukthanker, Rhea Sanjay and Grazzi, Riccardo and Hensman, James and Cameron, Pashmina',
+                   rs_,
+                   'https://arxiv.org/abs/2610.28537');
+            addArxivContent(2026, 'jolicoeurmartineau2026sliding', '2608.28444', 'slidingwindow.png', 
+                   'Sliding-window beats linear attention', 
+                   'Alexia Jolicoeur-Martineau, Rhea Sanjay Sukthanker, Pashmina Cameron, Emy Gervais',
+                   'Jolicoeur-Martineau, Alexia and Sukthanker, Rhea Sanjay and Cameron, Pashmina and Gervais, Emy',
+                   rs_,
+                   'https://arxiv.org/pdf/2608.28444');
             addArxivContent(2026, 'krishnakumar2026where', '2510.07227', 'whittle.png', 
                    'whittle: A Library for Sub-Network Extraction from Large Language Models', 
                    'Arjun Krishnakumar*, Rhea Sanjay Sukthanker*, Hannan Javed Mahadik*, Gabriela KadlecovÃ¡, Vladyslav Moroshan, Timur Carstensen, Frank Hutter, Aaron Klein',
