@@ -235,7 +235,15 @@
             <div class="row no-gutters">
             <div class="col-12 text-md-left" style="line-height:120%;">
                 <rd class="bbold ">10. 2026</rd>&nbsp;&nbsp;&nbsp;&nbsp;
-                <a class="note">(NEW!) Two new preprints released; check out </a>
+                <a class="note">(NEW!) New preprint released; check out </a>
+                <a href="https://arxiv.org/abs/2610.34886" target="_blank" class="note" style="color:#44a5c0;"><b><i>ThinkBit: Search Codewords, Recalibrate Scales, Select by Reasoning</i></b></a>
+                <a class="note">.</a>
+              </div>
+            </div>
+            <div class="row no-gutters">
+            <div class="col-12 text-md-left" style="line-height:120%;">
+                <rd class="bbold ">10. 2026</rd>&nbsp;&nbsp;&nbsp;&nbsp;
+                <a class="note">Two new preprints released; check out </a>
                 <a href="https://arxiv.org/abs/2610.28537" target="_blank" class="note" style="color:#44a5c0;"><b><i>Beyond 4 bits: Data-Centric Post-training Quantization and Recovery</i></b></a>
                 <a class="note"> and </a>
                 <a href="https://arxiv.org/pdf/2608.28444" target="_blank" class="note" style="color:#44a5c0;"><b><i>Sliding-window beats linear attention</i></b></a>
@@ -383,7 +391,7 @@
           <div id="content-container">
           </div>
           <script>
-            let callCounter = 8;
+            let callCounter = 9;
             let rs_ = 'https://rheasukthanker.github.io/';
             function addArxivContent(year_, name_, arxiv_, img_, title_, author_, bib_author_, project_= rs_, code_ = rs_, paper_ = `https://arxiv.org/abs/${arxiv_}`, venueLabel_ = 'arXiv') {
               const container = document.getElementById('content-container'); // Assuming you have a div with this ID to hold the content
@@ -422,6 +430,12 @@
               callCounter--;
               container.innerHTML += htmlContent;
             }
+            addArxivContent(2026, 'sukthanker2026thinkbit', '2610.34886', 'thinkbit.png', 
+                   'ThinkBit: Search Codewords, Recalibrate Scales, Select by Reasoning', 
+                   'Rhea Sanjay Sukthanker, Pashmina Cameron',
+                   'Sukthanker, Rhea Sanjay and Cameron, Pashmina',
+                   rs_,
+                   'https://arxiv.org/abs/2610.34886');
             addArxivContent(2026, 'sukthanker2026beyond', '2610.28537', 'beyond4bits.png', 
                    'Beyond 4 bits: Data-Centric Post-training Quantization and Recovery', 
                    'Rhea Sanjay Sukthanker, Riccardo Grazzi, James Hensman, Pashmina Cameron',
